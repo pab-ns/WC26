@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+   <title>Index</title>
+     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+<body class="bg-[#ffffff]">
+
+<!-- 0.0 INTRO -->
+<section class="relative min-h-screen">
+    <div class="h-[100vh] md:h-[72vh] flex justify-center">
+        <picture class="block h-full w-full md:w-auto">
+            <source media="(max-width: 767px)" srcset="/assets/hero_mobile.jpg">
+            <img src="/assets/hero_main.jpg"
+                 class="h-full w-full object-cover object-center
+                        md:w-auto md:object-contain" alt="">
+        </picture>
+    </div>
+
+    <!-- Mobile: overlaid on the image. Desktop: normal flow below it. -->
+    <div class="absolute inset-x-0 bottom-16 text-center space-y-4
+                md:static md:mt-8 md:px-0">
+        <span class="uppercase tracking-[0.3em] text-white text-xs bg-red-600 p-1 font-extrabold">
+            fifa world cup 2026
+        </span>
+
+        <h1 class="text-5xl md:text-6xl font-black text-neutral-800 capitalize leading-tight mx-auto md:max-w-4xl text-center">
+            <span class="bg-white box-decoration-clone py-1
+                         md:bg-transparent md:py-0 px-2">
+                Deconstructing the largest tournament ever
+            </span>
+        </h1>
+    </div>
+</section>
+
+<!-- 1.0 SLIDER TEXT -->
+<section class="container mx-auto justify-center items-center py-10">
+      <div class="max-w-3xl mx-auto text-center input-mobile-padding">
+        <p class="font-serif text-2xl text-gray-700 leading-10">
+48 nations. 1,246 players. One tournament. The World Cup has grown steadily since Uruguay hosted the first edition in 1930 with just 13 nations. It expanded to 16 in 1934, reached 24 in 1982 and jumped to 32 in 1998. A format that held for seven consecutive tournaments. <br><br> This year, 16 new nations will take part of the world's biggest stage. What follows is the full picture of the squads, the leagues, the clubs and the ages behind the most ambitious World Cup in the competition's 96-year history.
+</p>
+      </div>
+</section>
+
+<!-- 1.1 SLIDER  -->
+<section class="container mx-auto my-20 px-4">
+<div class="max-w-5xl mx-auto">
+
+      <!-- Slider -->
+      <div class="mx-auto max-w-3xl mb-4">
+        <div id="wc-labels" class="relative mt-3 h-4"></div>
+        <input id="wc-slider" type="range" min="0" max="22" value="0" step="1" class="w-full cursor-pointer" aria-label="Select World Cup year">
+      </div>
+
+      <!-- Dynamic header for the selected edition -->
+      <header class="mb-6 text-center">
+        <h2 id="wc-year" class="text-xl font-semibold tracking-tight">1930</h2>
+        <p id="wc-meta" class="mt-2 font-sans text-xs tracking-widest uppercase text-slate-400"></p>
+            </header>
+
+      <!-- Group grid (filled by app.js) -->
+      <div id="wc-grid" class="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4"></div>   
+
+</div>
+</section>  
+
+
+<!-- 2.0 MAP TEXT -->
+<section class="container mx-auto my-10 mt-20 md:mt-0 input-mobile-padding">
+<div class="max-w-2xl mx-auto space-y-5 md:space-y-10">
+        <h1 class="font-sans font-extrabold text-4xl text-blue-950 capitalize">
+          Where Are They Coming From?
+        </h1>
+        <p class="font-serif">
+          From the rain-soaked pitches of South Africa to the floodlit arenas of New York and Los Angeles, players from every corner of the globe have earned their place. <br><br>Every confederation on earth has a seat at the table. Europe sends its usual heavyweight contingent. South America brings its flair and history. Africa, long underrepresented, now has more slots than ever. And for the first time, a World Cup is being co-hosted by three nations — two of them making their case as genuine contenders on home soil.
+          <br><br>
+          From the windswept islands of Cape Verde to the football heartlands of Brazil and Germany, the map of this World Cup stretches further than any edition before it. No single region dominates the story. That is precisely the point.
+        </p>
+      </div>
+</section>  
+
+<!-- 2.1 MAP -->
+<section class="container mx-auto mb-20 mt-20 md:mt-0 input-mobile-padding">
+   <div class="max-w-5xl mx-auto">
+
+    <div class="text-center font-sans text-xs tracking-widest uppercase text-slate-400 py-3">
+      Hover a country to explore
+    </div>
+
+    <!-- CONF FILTER — centred -->
+    <div class="flex flex-wrap justify-center gap-2 py-3">
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border cursor-pointer transition-all duration-200"
+              data-conf="ALL"
+              style="background:#333;border-color:#555;color:#ccc">All</button>
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border border-black/10 bg-transparent text-slate-400 cursor-pointer transition-all duration-200"
+              data-conf="UEFA">UEFA</button>
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border border-black/10 bg-transparent text-slate-400 cursor-pointer transition-all duration-200"
+              data-conf="CONMEBOL">CONMEBOL</button>
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border border-black/10 bg-transparent text-slate-400 cursor-pointer transition-all duration-200"
+              data-conf="CAF">CAF</button>
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border border-black/10 bg-transparent text-slate-400 cursor-pointer transition-all duration-200"
+              data-conf="AFC">AFC</button>
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border border-black/10 bg-transparent text-slate-400 cursor-pointer transition-all duration-200"
+              data-conf="CONCACAF">CONCACAF</button>
+      <button class="conf-btn font-sans text-xxs tracking-widest uppercase px-3 py-1.5 rounded-sm border border-black/10 bg-transparent text-slate-400 cursor-pointer transition-all duration-200"
+              data-conf="OFC">OFC</button>
+    </div>
+ 
+    <!-- MAP — SVG is fetched from world-map.svg and injected inline so JS can
+         reach every .country path directly, exactly as if the SVG were hard-coded. -->
+    <div class="relative flex items-stretch overflow-hidden w-full">
+      <div id="map-svg-wrap" class="w-full flex items-center justify-center">
+        <!-- placeholder shown while the SVG loads -->
+        <p id="map-loading" class="font-sans text-xs tracking-widest uppercase text-slate-300 py-20">
+          Loading map…
+        </p>
+      </div>
+    </div>      
+
+   </div>
+</section>
+
+<div id="tooltip"
+     class="font-sans"
+     style="position:fixed; z-index:9999; pointer-events:none; display:none;
+            filter:drop-shadow(0 6px 20px rgba(0,0,0,0.12))">
+ 
+  <!-- White container, black text -->
+  <div class="bg-white border border-black/10 rounded-md overflow-hidden min-w-[210px]">
+ 
+    <!-- Header -->
+    <div class="px-4 py-3 border-b border-black/[0.07]">
+      <div id="tip-country"
+           class="text-lg font-bold leading-none tracking-wide text-black"></div>
+      <div class="flex items-center gap-2 mt-2">
+        <div id="tip-conf-dot" class="w-2 h-2 rounded-full shrink-0"></div>
+        <div id="tip-conf" class="text-xxs tracking-widest uppercase font-semibold"></div>
+      </div>
+    </div>
+ 
+    <!-- Body -->
+    <div class="px-4 py-3 flex items-center justify-between gap-6">
+      <div>
+        <div class="text-xs tracking-widest uppercase text-black/40 mb-1">FIFA Ranking</div>
+        <div id="tip-rank" class="font-bold leading-none text-black"></div>
+      </div>
+      <div class="text-right">
+        <div class="text-xs tracking-widest uppercase text-black/40 mb-1">Group</div>
+        <div id="tip-group" class="font-bold leading-none text-black"></div>
+      </div>
+    </div>
+ 
+  </div>
+</div>
+
+
+<!-- 3.0 SUNBURST TEXT -->
+<section class="container mx-auto my-10 mt-20 md:mt-0 input-mobile-padding">
+<div class="max-w-2xl mx-auto space-y-5 md:space-y-10">
+        <h1 class="font-sans font-extrabold text-4xl text-blue-950 capitalize">
+          The Players, the Leagues, the Clubs
+        </h1>
+        <p class="font-serif">
+When the tournament kicks off, some clubs will have more players on the pitch, spread across different squads, than most nations have in their entire squad. For 2026, 1,246 players drawn from 449 different clubs across 69 professional leagues in 71 countries.
+<br><br>
+The Premier League dominates the numbers with 200 players — nearly one in six of everyone at the tournament. The Bundesliga (108) and Ligue 1 and La Liga (86 each) follow. Serie A (71), the Saudi Pro League (49) and Major League Soccer (48) round out the top tier, reflecting both the traditional power centres of European football and the rising ambition of leagues in the Gulf and North America.
+        </p>
+      </div>
+</section>    
+
+<!-- 3.1 SUNBURST CHART -->
+<section class="container mx-auto mt-20 md:mt-0">
+<div class="max-w-5xl mx-auto">
+   <!-- start -->
+ 
+   <!-- Breadcrumb -->
+
+    <div class="mx-auto flex flex-col items-center space-y-2">
+      <div class="text-xs">
+        <span id="bc-hint" class="text-center font-sans text-xxs tracking-widest uppercase text-slate-400 py-3">Click a segment to drill down</span>
+      </div>
+    
+      <div class="text-sm">
+        <span id="bc-root" class="cursor-pointer font-semibold text-blue-950 transition-opacity hover:opacity-60" onclick="goRoot()">All Players</span>
+        <span id="bc-sep1" class="hidden text-gray-300">&rsaquo;</span>
+        <span id="bc-league" class="hidden cursor-pointer font-semibold text-blue-950 transition-opacity hover:opacity-60"></span>
+        <span id="bc-sep2" class="hidden text-gray-300">&rsaquo;</span>
+        <span id="bc-club" class="hidden text-gray-500"></span>
+      </div>
+
+    </div>
+    
+ 
+   <!-- Chart -->
+   <div id="chart-area" class="relative flex flex-col items-center justify-center py-8">
+     <div id="sunburst-container" class="relative flex items-center justify-center">
+       <svg id="sunburst-svg" class="block"></svg>
+       <div class="pointer-events-none absolute left-1/2 top-1/2 w-40 -translate-x-1/2 -translate-y-1/2 text-center font-sans">
+         <div id="center-num" class="text-4xl font-extrabold leading-none text-blue-950">1246</div>
+         <div id="center-label" class="mt-1.5 text-[0.65rem] uppercase leading-snug tracking-widest text-gray-500">Players</div>
+         <div id="center-sub" class="mt-1 text-xs leading-snug text-gray-400">48 nations &middot; 69 leagues</div>
+       </div>
+     </div>
+     <button id="back-btn" class="pointer-events-none mt-6 flex cursor-pointer items-center gap-2 font-sans text-[0.65rem] uppercase tracking-widest text-gray-400 opacity-0 transition-all hover:text-blue-950" onclick="goBack()">
+       <span class="flex h-4 w-4 items-center justify-center text-[0.6rem]">&larr;</span>
+       Back
+     </button>
+   </div>
+ 
+   <!-- Tooltip -->
+   <div id="tooltip-sun" class="pointer-events-none fixed z-50 hidden max-w-[260px] rounded border border-gray-200 bg-white px-4 py-3 font-sans text-black shadow-lg"></div>
+
+   <!-- end --> 
+</div>
+</section>
+
+<!-- 3.2 SUNBURST TEXT -->
+<div class="container max-w-2xl mx-auto space-y-5 mb-20 md:space-y-10 input-mobile-padding">
+<p class="font-serif">
+Manchester City leads the way with 19 players at the tournament, followed closely by Bayern Munich (18), Paris Saint-Germain and Arsenal (16 each), and Barcelona (15). Real Madrid (10), Liverpool (11) and Atlético Madrid (12) are not far behind.
+<br><br>
+These clubs have not just produced the best players in the world — they have built the squads that national managers depend on. When Germany faces Spain, or England takes on Brazil, there is a very real chance that teammates at club level are standing on opposite sides.
+<br><br>
+The "Citizens" alone will have players representing multiple nations across different groups. It is one of the quiet subplots of every World Cup: club loyalty suspended, national identity restored.
+</p>
+</div>
+
+<!-- 4.0 LEAGUE TEXT -->
+<section class="container mx-auto my-10 mt-20 md:mt-0 input-mobile-padding">
+<div class="max-w-2xl mx-auto space-y-5 md:space-y-10">
+        <h1 class="font-sans font-extrabold text-4xl text-blue-950 capitalize">
+          Home Comforts vs. the World Stage
+        </h1>
+        <p class="font-serif">
+For some nations, their best players never left. For others, you have to search six continents to find the squad.
+<br><br>
+One of the most revealing statistics in any World Cup squad is the split between players competing in their domestic league and those who have moved abroad to ply their trade. It tells you something about the strength — and the pull — of a country's football pyramid.
+<br><br>
+Saudi Arabia and Qatar stand at one extreme: 96% of both squads play at home, a direct result of investment that has kept — and attracted — top-level talent within their borders. England (81%) and Germany (73%) are also high, their domestic leagues simply being among the best in the world.
+<br><br>
+At the other end, six nations send 100% of their squad from clubs abroad: Cape Verde, Curaçao, DR Congo, Ivory Coast, Senegal and Uruguay. For these countries, the diaspora *is* the squad. Every single player earns their living in a foreign league, from Sadio Mané in Saudi Arabia to Franck Kessié at Al-Ahli to Federico Valverde at Real Madrid.
+        </p>
+      </div>
+</section>
+
+<!-- 4.1 LEAGUE CHART -->
+<section class="container mx-auto mb-20 mt-20 md:mt-0">
+<div class="max-w-5xl mx-auto">
+   <!-- start -->
+   <div class="mt-10">
+      <!-- Sort controls -->
+      <div class="flex justify-center flex-wrap gap-3 mb-6" id="domestic-controls">
+        <button data-sort="abroad" class="domestic-btn font-sans text-xxs uppercase tracking-widest px-3 py-1.5 rounded-sm border cursor-pointer transition-colors">Sort by most abroad</button>
+        <button data-sort="domestic" class="domestic-btn font-sans text-xxs uppercase tracking-widest px-3 py-1.5 rounded-sm border cursor-pointer transition-colors">Sort by most domestic</button>
+        <button data-sort="alpha" class="domestic-btn font-sans text-xxs uppercase tracking-widest px-3 py-1.5 rounded-sm border cursor-pointer transition-colors">Alphabetical</button>
+      </div>
+      <!-- Chart -->
+      <div class="relative w-full" id="domestic-chart-box">
+        <canvas id="domestic-chart-canvas"></canvas>
+      </div>
+   </div>
+   <!-- end -->
+</div>
+</section>
+
+<!-- 5.0 AGE TEXT -->
+<section class="container mx-auto my-10 mt-20 md:mt-0 input-mobile-padding">
+<div class="max-w-2xl mx-auto space-y-5 md:space-y-10">
+        <h1 class="font-sans font-extrabold text-4xl text-blue-950 capitalize">
+          Young Guns, Old Heads
+        </h1>
+        <p class="font-serif">
+The average age across all 1,246 players is 27.5 years — a figure that has barely moved across tournaments, a reflection of when players typically hit their peak. The middle of the bell curve is predictable: most players are between 24 and 30, the sweet spot where physical sharpness and tactical experience come together.
+<br><br>
+But the outliers are where the narrative lives. Mexico's Gilberto Mora is just 17 — born in 2008 — and arrived at Tijuana already earning international minutes. At the opposite end, Scotland's Craig Gordon, a goalkeeper at Heart of Midlothian, is 43 years old and making his case that age is just a number between the posts. Between them lies 26 years of football, and both will be on the same pitch at the same tournament.
+<br><br>
+The bubble chart below maps every squad's age profile — which nations are building for the future, and which are leaning on experience for one last run.
+        </p>
+      </div>
+</section>
+
+<!-- 5.1 AGE CHART -->
+<section class="container mx-auto mb-20 mt-20 md:mt-0">
+<div class="max-w-5xl mx-auto">
+   <!-- start -->
+   <div class="px-4">
+     <!-- chart -->
+     <div id="chart-wrap" class="relative w-full h-[420px] md:h-[520px]">
+       <canvas id="bubble-chart"></canvas>
+     </div>
+
+   </div>
+
+   <!-- end --> 
+</div>
+</section>
+
+
+<!-- 6.0 OUTRO TEXT -->
+<section class="container mx-auto my-10 mt-20 md:mt-0 input-mobile-padding">
+<div class="max-w-2xl mx-auto space-y-5 md:space-y-10">
+        <h1 class="font-sans font-extrabold text-4xl text-blue-950 capitalize">
+          The World Comes to North America
+        </h1>
+        <p class="font-serif">
+Ninety-six years. Twenty-three editions. And now, for the first time, the World Cup is bigger than anyone imagined it could be. Forty-eight nations means new stories that have never been told on this stage — first-time qualifiers facing established powers, diaspora squads carrying the hopes of millions, and teenagers sharing a pitch with veterans older than they have been alive.
+<br><br>
+The numbers are extraordinary. But football has always been about more than numbers. It is about Craig Gordon, at 43, pulling on gloves one more time. It is about Gilberto Mora, still only 17, learning what it means to play under this kind of pressure. It is about the six nations who could not find a single player worth picking at home — because their best footballers have scattered across the world in search of the highest possible level.
+        </p>
+      </div>
+
+<img src="assets/wc-tropgyimage.png" width="" alt="" class="mx-auto mt-5 md:mt-20 object-cover md:w-2/3 filter contrast-125 saturate-50 mix-blend-multiply">
+
+</section>
+
+
+  <script src="js/flags.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>    
+
+  <script src="js/map2.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>    
+  <script src="js/sunburst.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/league.js"></script>   
+
+  <script src="js/age2.js"></script>   
+
+
+</body>
+</html>

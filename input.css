@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-mobile-padding {@apply px-5 md:px-0}
+
+/* body {
+    background-image: url("../assets/gridme.png");
+  } */
+
+  /* Only rules that can't be expressed as Tailwind utilities live here. */
+
+    /* Range slider — vendor pseudo-elements have no utility equivalents. */
+    #wc-slider { -webkit-appearance: none; appearance: none; height: 4px; background: #e5e5e5; border-radius: 9999px; }
+    #wc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 18px; height: 18px; border-radius: 9999px;
+      background: #f43f5e; border: 2px solid #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,.25); cursor: pointer;
+    }
+    #wc-slider::-moz-range-thumb {
+      width: 18px; height: 18px; border: 2px solid #fff; border-radius: 9999px;
+      background: #f43f5e; box-shadow: 0 1px 3px rgba(0,0,0,.25); cursor: pointer;
+    }
+    #wc-slider:focus-visible { outline: 2px solid #f43f5e; outline-offset: 4px; }
+
+    /* Flag SVGs are injected via innerHTML; size the child element. */
+    .flag svg { width: 100%; height: 100%; display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+
+    
+        :root {
+      --map-base:   #fefefe;
+      --map-stroke: #444444;
+    }
+ 
+    /* SVG country base + states */
+    .country {
+      fill: var(--map-base);
+      stroke: var(--map-stroke);
+      stroke-width: 0.5px;
+      transition: fill 0.15s, opacity 0.2s;
+      cursor: default;
+    }
+    .country.qualified       { cursor: pointer; }
+    .country.qualified:hover { opacity: 0.5; }
+    .country.dimmed          { fill: #3a3a3a !important; opacity: 0.4; }
+ 
+    /* Legend interactive states */
+    .legend-item:hover  { opacity: 0.7; }
+    .legend-item.dimmed { opacity: 0.3; }
+ 
+    /* Conf button hover — colour injected by JS via inline style */
+    .conf-btn:hover { opacity: 0.85; }    
+
+
