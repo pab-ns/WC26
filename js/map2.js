@@ -100,7 +100,7 @@ const GB_SHARED = [
 // fetch() downloads the SVG text and injects it directly into the DOM,
 // so every .country path is a real element the rest of this script can use.
 
-fetch("/assets/map.svg")
+fetch("https://pab-ns.github.io/WC26/assets/map.svg")
   .then(r => {
     if (!r.ok) throw new Error("Could not load world-map.svg — HTTP " + r.status);
     return r.text();
